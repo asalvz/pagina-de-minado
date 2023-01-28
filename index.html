@@ -41,7 +41,14 @@
 
 
 </head>
-	
+	<script>
+    window.addEventListener("scroll", function(){
+    var button = document.querySelector(".Home_soon__8s2ww button");
+    var scroll = window.pageYOffset;
+    button.style.top = scroll + "px";
+});
+</script>
+
 	<style>
     .Home_soon__8s2ww button {
         background-color: #0733F5;
@@ -93,11 +100,7 @@
         opacity: 1;
     }
 </style>
-	window.addEventListener("scroll", function(){
-    var button = document.querySelector(".Home_soon__8s2ww button");
-    var scroll = window.pageYOffset;
-    button.style.top = scroll + 10 + "px";
-});
+	
 
 
 	
