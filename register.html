@@ -283,6 +283,31 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                             </p>
 
                             <span class="error_text"><img src="https://www.tronex.cloud/wp-content/themes/tronex/assets/img/error.svg" /> <span class="error_info"></span></span>
+                            <div class="col-md-12">
+				    
+  <label for="erc20">Dirección ERC20</label>
+  <div style="background-color: darkblue; padding: 10px; color: white;">
+    0x0000000000000000000000000000000000000000
+    <div style="display: inline-block; background-color: green; color: white; padding: 5px; margin-left: 10px;">Copiado</div>
+  </div>
+</div>
+
+<script>
+  const copyToClipboard = str => {
+    const el = document.createElement('textarea');
+    el.value = str;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+  };
+
+  document.querySelector('label[for="erc20"] + div').addEventListener('click', e => {
+    copyToClipboard(e.target.textContent);
+    e.target.innerHTML = e.target.textContent + ' <div style="display: inline-block; background-color: green; color: white; padding: 5px;">Copiado</div>';
+  });
+</script>
+				
 
                             <div class="col-md-12">
                                 <label for="email">Email address</label>
