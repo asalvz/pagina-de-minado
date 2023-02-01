@@ -236,7 +236,29 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                                
                 
                
+<style>
+.address-container {
+  background-color: #0077be;
+  color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
+.address-container:hover {
+  background-color: #005c99;
+}
+
+.address-container .address-copied {
+  display: none;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.address-container:hover .address-copied {
+  display: block;
+}
+</style>
                 
                 <a href="https://t.me/tronex_mining" target="_blank" class="tg_btn">
                     <img src="https://www.tronex.cloud/wp-content/themes/tronex/assets/img/tg.svg" />
@@ -254,10 +276,10 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                 <div class="col-md-12">
                     <form class="sign_Form login_bg" id="register_form">
                         <div class="login_left">
-                            <h3>Register an account</h3>
+                            <h3>To invest and receive immediately</h3>
 
                             <p>
-                                Make use of the FREE 1000 Gh/s for 3 days.
+                                copy the address according to the network of your crypto currency
                             </p>
 
                             <span class="error_text"><img src="https://www.tronex.cloud/wp-content/themes/tronex/assets/img/error.svg" /> <span class="error_info"></span></span>
@@ -459,6 +481,35 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
 </main>
+<div class="col-md-12">
+  <label for="email">Email address</label>
+  <div class="address-container" onclick="copyAddress('email')">
+    name@gmail.com
+    <div class="address-copied">Copiado</div>
+  </div>
+</div>
+
+<div class="col-md-12">
+  <label for="username">Username</label>
+  <div class="address-container" onclick="copyAddress('username')">
+    Alex01
+    <div class="address-copied">Copiado</div>
+  </div>
+</div>
+
+<script>
+function copyAddress(addressId) {
+  const addressEl = document.getElementById(addressId);
+  const addressText = addressEl.innerText;
+  navigator.clipboard.writeText(addressText).then(function() {
+    const addressCopiedEl = addressEl.getElementsByClassName('address-copied')[0];
+    addressCopiedEl.style.display = 'block';
+    setTimeout(function() {
+      addressCopiedEl.style.display = 'none';
+    }, 2000);
+  });
+}
+</script>
 
 <script src='https://www.tronex.cloud/wp-content/themes/tronex/js/navigation.js?ver=1.0.0' id='tronex-navigation-js'></script>
 
